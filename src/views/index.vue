@@ -63,6 +63,7 @@ import {
 import 'vant/lib/index.css'
 import areaList from '@/assets/js/area'
 import { msToDate } from '@/assets/js/common'
+const { getLatestTag, errLog } = require('../../script/utils');
 
 Vue.use(TreeSelect)
 Vue.use(Area);
@@ -104,6 +105,7 @@ export default {
   mounted() {
     console.log(process);
     console.log(process.env);
+    console.log(getLatestTag())
   },
   methods: {
     formatter(type, val) {
