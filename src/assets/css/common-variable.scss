@@ -1,0 +1,6 @@
+@function px2rem($val){
+    @return  $val /1px / 100 + rem;
+}
+body {
+    font-size: px2rem(24px);
+}

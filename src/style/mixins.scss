@@ -1,0 +1,7 @@
+/*全局 Mixins 管理*/
+@function px2rem($val){
+    @return  $val /1px / 100 + rem;
+}
+@mixin name {
+   color: #fff 
+}
