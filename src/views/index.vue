@@ -4,6 +4,7 @@
         <div v-cloak>
           {{ message }}
         </div>
+        <div @click='jump'>跳转页面</div>
         <ul class="ul">
           <li @click="onShowDataFn">选择出生日期</li>
           <li @click="onShowCityFn">选择居住省市</li>
@@ -63,7 +64,6 @@ import {
 import 'vant/lib/index.css'
 import areaList from '@/assets/js/area'
 import { msToDate } from '@/assets/js/common'
-const { getLatestTag, errLog } = require('../../script/utils');
 
 Vue.use(TreeSelect)
 Vue.use(Area);
@@ -105,7 +105,6 @@ export default {
   mounted() {
     console.log(process);
     console.log(process.env);
-    console.log(getLatestTag())
   },
   methods: {
     formatter(type, val) {
@@ -145,8 +144,7 @@ export default {
       console.log('取消')
     },
     jump(url) {
-      this.$router.push(`/about?view=${url}`)
-      this.currentRoute = url
+      this.$router.push('/data')
     },
     seeFn(item) {
       window.open(item.link);

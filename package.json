@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "dev": "vue-cli-service serve --mode dev",
     "build": "vue-cli-service build",
+    "prebuild:prod": "node ./script/pre-build.js",
     "build:dev": "vue-cli-service build --mode dev",
     "build:prod": "vue-cli-service build --mode production",
     "build:stage": "vue-cli-service build --mode staging",

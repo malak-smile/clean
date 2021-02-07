@@ -28,14 +28,18 @@ const routes = [
     component: () => import(/* 404 */ '../views/404'),
   },
 ]
-const linkVersion = window.location.pathname.match(/^\/(v\d{6}(-\d)?)/)
+const linkVersion = window.location.pathname.match(/^\/(v\d{4}(-\d)?)/)
 const testVersion = window.location.pathname.match(/^\/(f-\w+)/)
 const rootPath = linkVersion ? linkVersion[1] : (testVersion ? testVersion[1] : '/')
 console.log(rootPath);
 const router = new VueRouter({
   el: '#app',
   mode: 'history',
-  base: '/',
+  base: rootPath,
   routes
+})
+router.beforeEach((to,form,next)=>{
+  console.log(to,form)
+  next()
 })
 export default router
